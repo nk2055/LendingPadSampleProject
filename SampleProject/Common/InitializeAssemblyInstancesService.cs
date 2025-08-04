@@ -20,7 +20,7 @@ namespace Common
 
         public static void RegisterAssemblyWithSerializableTypes(Container container, Assembly assembly)
         {
-            container.RegisterInitializer<ListTypeLookup<Assembly>>(c => { c.Register(assembly); });
+            container.RegisterInitializer<List<Assembly>>(c => { c.Register(assembly); });
         }
 
         public static void Initialize(Container container, Lifestyle lifestyle, Assembly assembly)

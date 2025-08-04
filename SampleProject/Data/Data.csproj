@@ -5,13 +5,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="RavenDB.Client" Version="3.5.9"/>
-        <PackageReference Include="SimpleInjector" Version="4.0.8"/>
+      <Compile Remove="Repositories\OrderRepository.cs" />
+      <Compile Remove="Repositories\ProductRepository.cs" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj"/>
-        <ProjectReference Include="..\Common\Common.csproj"/>
+        <PackageReference Include="RavenDB.Client" Version="3.5.9" />
+        <PackageReference Include="SimpleInjector" Version="4.0.8" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\BusinessEntities\BusinessEntities.csproj" />
+        <ProjectReference Include="..\Common\Common.csproj" />
     </ItemGroup>
 
 </Project>

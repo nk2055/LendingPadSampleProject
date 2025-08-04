@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Common
 {
-    public class ListTypeLookup<T> : IListTypeLookup<T> where T : class
+    public class List<T> : IListTypeLookup<T> where T : class
     {
-        private readonly List<T> _list = new List<T>();
+        private readonly System.Collections.Generic.List<T> _list = new System.Collections.Generic.List<T>();
 
         public void Register(T item)
         {

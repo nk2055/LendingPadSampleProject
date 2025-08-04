@@ -15,7 +15,7 @@ namespace Data
         {
             var assembly = typeof(DataConfiguration).Assembly;
 
-            container.RegisterSingleton<IListTypeLookup<Assembly>, ListTypeLookup<Assembly>>();
+            container.RegisterSingleton<IListTypeLookup<Assembly>, List<Assembly>>();
 
             InitializeAssemblyInstancesService.RegisterAssemblyWithSerializableTypes(container, typeof(User).Assembly);
             InitializeAssemblyInstancesService.RegisterAssemblyWithSerializableTypes(container, assembly);

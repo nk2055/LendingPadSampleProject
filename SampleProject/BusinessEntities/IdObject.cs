@@ -11,7 +11,7 @@ namespace BusinessEntities
         public Guid Id
         {
             get => _id;
-            private set => _id = value;
+            set => _id = value;
         }
 
         public bool EqualsById(IdObject other)

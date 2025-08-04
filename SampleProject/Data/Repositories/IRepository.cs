@@ -9,4 +9,5 @@ namespace Data.Repositories
         void Delete(T entity);
         T Get(Guid id);
     }
+
 }

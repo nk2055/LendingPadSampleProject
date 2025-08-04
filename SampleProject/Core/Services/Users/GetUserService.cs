@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using BusinessEntities;
 using Common;
 using Data.Repositories;
@@ -24,6 +25,12 @@ namespace Core.Services.Users
         public IEnumerable<User> GetUsers(UserTypes? userType = null, string name = null, string email = null)
         {
             return _userRepository.Get(userType, name, email);
+        }
+
+        public IEnumerable<User> GetUsersByTag(string tag)
+        {
+            return GetUsers().Where(user => user.Tags != null && user.Tags.Contains(tag, StringComparer.OrdinalIgnoreCase))
+                       .ToList();
         }
     }
 }
