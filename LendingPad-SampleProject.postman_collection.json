@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "26c5397e-2163-4643-ae23-13c5eb581e25",
+		"_postman_id": "74933fcd-ed67-4fb7-9bb9-d4df5cae22c4",
 		"name": "LendingPad-SampleProject",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30292534"
+		"_exporter_id": "2615803"
 	},
 	"item": [
 		{
@@ -169,7 +169,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:49834/users/9422740e-6426-4c46-8445-3f5274a62424/update",
+							"raw": "http://localhost:49834/users/1422740e-6426-4c46-8445-3f5274a62424/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -177,7 +177,7 @@
 							"port": "49834",
 							"path": [
 								"users",
-								"9422740e-6426-4c46-8445-3f5274a62424",
+								"1422740e-6426-4c46-8445-3f5274a62424",
 								"update"
 							]
 						}
@@ -278,11 +278,356 @@
 			"item": [
 				{
 					"name": "Products",
-					"item": []
+					"item": [
+						{
+							"name": "Clear Products",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/products/clear",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"clear"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateProduct",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Wireless Mouse\",\r\n  \"sku\": \"WM-2025\",\r\n  \"price\": 29.99,\r\n  \"stockQuantity\": 150,\r\n  \"createdDate\": \"2025-08-04T15:00:00Z\",\r\n  \"isActive\": true,\r\n  \"tags\": [\"electronics\", \"accessory\", \"wireless\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/products/3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetProduct",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/products/3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateProduct",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Wireless Gaming Mouse\",\r\n  \"sku\": \"WM-2025\",\r\n  \"price\": 34.99,\r\n  \"stockQuantity\": 120,\r\n  \"createdDate\": \"2025-08-04T15:00:00Z\",\r\n  \"isActive\": true,\r\n  \"tags\": [\"electronics\", \"gaming\", \"wireless\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/products/3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetProductList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/products/list?skip=0&take=10&name=Wireless&sku=WM-2025&isActive=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"list"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "take",
+											"value": "10"
+										},
+										{
+											"key": "name",
+											"value": "Wireless"
+										},
+										{
+											"key": "sku",
+											"value": "WM-2025"
+										},
+										{
+											"key": "isActive",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteProduct",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/products/3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"products",
+										"3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				},
 				{
 					"name": "Orders",
-					"item": []
+					"item": [
+						{
+							"name": "ClearOrders",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/orders/clear",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"clear"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateOrder",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"orderId\": \"3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa\",\r\n  \"customerId\": \"c1112222-3333-4444-5555-666677778888\",\r\n  \"status\": \"Pending\",\r\n  \"totalAmount\": 1499.98,\r\n  \"products\": [\r\n    {\r\n      \"id\": \"3f2d1c4b-7e1a-44e2-9d2f-5a2e3b4c7d8f\",\r\n      \"name\": \"Gaming Laptop\",\r\n      \"sku\": \"GL-5001\",\r\n      \"price\": 1299.99,\r\n      \"isActive\": true,\r\n      \"stockQuantity\": 10,\r\n      \"createdDate\": \"2025-08-04T10:30:00Z\",\r\n      \"tags\": [\"electronics\", \"laptop\", \"gaming\"]\r\n    },\r\n    {\r\n      \"id\": \"7a8c3e2f-9d4b-4e8a-b3f2-5d3c2b7e9a8f\",\r\n      \"name\": \"Wireless Headphones\",\r\n      \"sku\": \"WH-3001\",\r\n      \"price\": 199.99,\r\n      \"isActive\": true,\r\n      \"stockQuantity\": 50,\r\n      \"createdDate\": \"2025-08-04T10:30:00Z\",\r\n      \"tags\": [\"electronics\", \"audio\", \"wireless\"]\r\n    }\r\n  ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/orders/3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetOrder",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/orders/3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateOrder",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"orderId\": \"3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa\",\r\n  \"customerId\": \"c1112222-3333-4444-5555-666677778888\",\r\n  \"status\": \"Shipped\",\r\n  \"totalAmount\": 1499.98,\r\n  \"products\": [\r\n    {\r\n      \"id\": \"3f2d1c4b-7e1a-44e2-9d2f-5a2e3b4c7d8f\",\r\n      \"name\": \"Gaming Laptop - Updated\",\r\n      \"sku\": \"GL-5001\",\r\n      \"price\": 1299.99,\r\n      \"isActive\": true,\r\n      \"stockQuantity\": 8,\r\n      \"createdDate\": \"2025-08-04T10:30:00Z\",\r\n      \"tags\": [\"electronics\", \"laptop\", \"gaming\", \"updated\"]\r\n    }\r\n  ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:49834/orders/3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetOrdersList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/orders/list?skip=0&take=10&customerId=c1112222-3333-4444-5555-666677778888&status=Shipped",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"list"
+									],
+									"query": [
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "take",
+											"value": "10"
+										},
+										{
+											"key": "customerId",
+											"value": "c1112222-3333-4444-5555-666677778888"
+										},
+										{
+											"key": "status",
+											"value": "Shipped"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetProductsByOrder",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/orders/3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteOrder",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:49834/orders/3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa/delete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "49834",
+									"path": [
+										"orders",
+										"3f9d3c5a-12d5-4c2f-8e64-4a7be1d9a8aa",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
